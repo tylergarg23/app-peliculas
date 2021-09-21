@@ -1,3 +1,11 @@
-<h2>Listado de Peliculas</h2>
+<!-- <input type="file" style="display: none;" #cargar>
 
-<app-listado-peliculas></app-listado-peliculas>
+<button (click)="cargar.click()">Cargar Archivo</button> -->
+
+<h2>Listado de Peliculas en Cines</h2>
+
+<app-listado-peliculas [peliculas]="peliculasEnCines"></app-listado-peliculas>
+
+<h2>Listado de Peliculas Futuros Estrenos</h2>
+
+<app-listado-peliculas [peliculas]="peliculasProximosEstrenos"></app-listado-peliculas>
