@@ -1,9 +1,20 @@
 <div *ngIf="!listado">
-    <img src="https://c.tenor.com/tEBoZu1ISJ8AAAAC/spinning-loading.gif" alt="">
+
+    <span #cargando>
+        <ng-content select="[cargando]"></ng-content>
+    </span>
+    <span *ngIf="!cargando.innerHTML.trim()">
+        <img src="https://c.tenor.com/tEBoZu1ISJ8AAAAC/spinning-loading.gif" alt=""/>
+    </span>
+
   </div>
   
   <div *ngIf="listado?.length === 0">
-    <p>No hay peliculas</p>
+    <span #vacio><ng-content select="[vacio]"></ng-content></span>
+    <span *ngIf="!vacio.innerHTML.trim()">
+        <p>No hay peliculas</p>
+    </span>
+    
   </div>
   
   
